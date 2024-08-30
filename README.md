@@ -5,4 +5,5 @@ A felhasználóknak van jogosultsági szintjük, ami a következők lehetnek:
 - Reader
 - Editor
 - Admin
+
 Ezek alapján különböző hozzáférésük van az adatbázishoz. A reader csak lekérni tud, az editor módosítani is. Az admin jogosultsággal rendelkező felhasználó, a többi felhasználó fiókját tudja módosítani: deaktiválni, törölni, jogosultságot adni.
