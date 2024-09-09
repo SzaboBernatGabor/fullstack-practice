@@ -10,6 +10,7 @@ interface CookieData {
 export async function middleware(request: NextRequest) {
   try {
     const token = (await getCookie('token')) as any;
+    console.log(request.nextUrl.pathname)
     if (token) {
       const decoded = jwt.decode(token?.value) as any;
       if (decoded.active) {
@@ -17,6 +18,10 @@ export async function middleware(request: NextRequest) {
           permission: decoded.permission,
           active: decoded.active,
         };
+      }
+      if (request.nextUrl.pathname.startsWith('/admin') && decoded.permission !== 2)
+      {
+        return NextResponse.redirect(new URL('/cats', request.url));
       }
     } else {
       return NextResponse.redirect(new URL('/unauthorized', request.url));
