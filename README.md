@@ -8,4 +8,7 @@ A felhasználóknak van jogosultsági szintjük, ami a következők lehetnek:
 
 Ezek alapján különböző hozzáférésük van az adatbázishoz. A reader csak lekérni tud, az editor módosítani is. Az admin jogosultsággal rendelkező felhasználó, a többi felhasználó fiókját is tudja módosítani: deaktiválni, törölni, jogosultságot adni.
 
-A backend tartalmaz egy .env fájlt, amiben az adatbázis connection stringje található 'MONGODB_CONN_STRING' néven.
+# Fontos tudnivalók
+A backendnek tartalmaznia kell egy .env fájlt, amiben az adatbázis connection stringje található 'MONGODB_CONN_STRING' néven.
+A frontend portja 3000.
+Alapértelmezetten nem létezik admin jogosultságú felhasználó, így manuálisan kell az adatbázisban az egyik felhasználó permission értékét 2-re állítani, hogy az lehessen.
